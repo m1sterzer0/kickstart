@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [ "-std=c++14", 
+                      "-Wl,--stack=268435456",
+                      "-g",
+                      "-Wall",
+                      "-Wextra",
+                      "-pedantic",
+                      "-Wformat=2",
+                      "-Wfloat-equal",
+                      "-Wlogical-op",
+                      "-Wredundant-decls",
+                      "-Wconversion",
+                      "-Wcast-qual",
+                      "-Wcast-align",
+                      "-Wuseless-cast",
+                      "-Wno-shadow",
+                      "-Wno-unused-result",
+                      "-Wno-unused-parameter",
+                      "-Wno-unused-local-typedefs",
+                      "-Wno-long-long",
+                      "-DLOCAL_PROJECT",
+                      "-DLOCAL_DEBUG",
+                      "-D_GLIBCXX_DEBUG",
+                      "-D_GLIBCXX_DEBUG_PEDANTIC",
+                      "${file}" ],
+            "group": { "kind": "build", "isDefault": true }
+        }
+    ]
+}
